@@ -1,0 +1,51 @@
+#customdiv1 {
+    display: none;
+}
+
+#customdiv2 {
+    display: none;
+}
+
+#customdiv3 {
+    display: none;
+}
+
+#customdiv4 {
+    display: none;
+}
+
+.navcustom {
+    background-color: #0F0F0F
+}
+
+body {
+    background-color: #2D2E2E
+}
+
+.sidenav {
+    background-color: #716969
+}
+
+.sidenavlist {
+    background-color: #716969
+}
+
+.customcard {
+    /*background-color: #2A1E5C*/
+    background-image: linear-gradient(to bottom right, #716969, #BCABAE);
+}
+
+.collapsible-header {
+    background-color: #BCABAE
+}
+
+.mybody {
+    background-color: #FBFBFB
+}
+
+.cover {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+}

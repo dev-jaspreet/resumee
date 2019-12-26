@@ -1,0 +1,241 @@
+<%- include ("./partials/header") %>
+<%var tempcount = 0%>
+<div class="row">
+    <div class="col s3">
+        <%- include ("./partials/sidenav") %>
+    </div>
+    <div class="col s12 m9">
+        <form action="/updateResume/<%=foundresume._id%>?_method=PUT" method="POST">
+        <div class="card-panel teal">
+            <span class="white-text">
+                <h5>Do you want to change the way you call your Resume?</h5>
+            </span>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="resumename" type="text" class="validate white-text" name="resumename" value="<%=foundresume.resumename%>">
+                    <label for="resumename">Enter Here !!!</label>
+                </div>
+            </div>
+        </div>
+            <ul class="collapsible">
+                <li class="active">
+                    <div class="collapsible-header"><i class="material-icons">filter_drama</i>Project/Experience.
+                    </div>
+                    <div class="collapsible-body black">
+                        <div id="appendhere1">
+                            <% if(foundresume.project.title != null){ %>
+                            <% for(var i=0;i<foundresume.project.title.length;i++){ %>
+                            <div id="dummy<%=tempcount%>">
+                                <div class="row">
+                                    <div class="col s12">
+                                        <div class="card-panel animate slideInUp delay-<%=i%>s">
+                                            <div class="input-field">
+                                                <input id="projecttitle" type="text" name="projecttitle"
+                                                    class="validate" value="<%=foundresume.project.title[i]%>">
+                                                <label for="projecttitle">Title</label>
+                                            </div>
+                                            <div class="input-field">
+                                                <textarea id="textarea1" name="projectdescription"
+                                                    class="materialize-textarea"><%=foundresume.project.description[i]%></textarea>
+                                                <label for="textarea1">Textarea</label>
+                                            </div>
+                                            <div class="input-field">
+                                                <input id="projecturl" type="url" name="projecturl" class="validate"
+                                                    value="<%=foundresume.project.url[i]%>">
+                                                <label for="projecturl">Link (Optional): https://www...</label>
+                                            </div>
+                                            <div class="input-field">
+                                                <input id="projectstartdate" type="text" name="projectstartdate"
+                                                    value="<%=foundresume.project.startdate[i]%>" class="datepicker">
+                                                <label for="projectstartdate">Start Date:</label>
+                                            </div>
+                                            <div class="input-field">
+                                                <input id="projectenddate" type="text" name="projectenddate"
+                                                    value="<%=foundresume.project.enddate[i]%>" class="datepicker">
+                                                <label for="projectenddate">End Date:</label>
+                                            </div>
+                                            <a onclick="deletion(<%=tempcount%>)"
+                                                class="waves-effect waves-light btn">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <%tempcount++%>
+                            <% } %>
+                            <% } %>
+                        </div>
+                        <div class="row">
+                            <!--<div class="col s1"></div>-->
+                            <div class="col s12">
+                                <a onclick="insertion(0)" class="waves-effect waves-light btn">Add</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">place</i>Education.</div>
+                    <div class="collapsible-body black">
+                        <div id="appendhere2">
+                            <% if(foundresume.education.title != null){ %>
+                            <% for(var i=0;i<foundresume.education.title.length;i++){ %>
+                            <div id="dummy<%=tempcount%>">
+                                <div class="row">
+                                    <div class="col s12">
+                                        <div class="card-panel animate slideInUp delay-<%=i%>s">
+                                            <div class="input-field">
+                                                <input id="educationtitle" type="text" name="educationtitle"
+                                                    class="validate" value="<%=foundresume.education.title[i]%>">
+                                                <label for="educationtitle">Title</label>
+                                            </div>
+                                            <div class="input-field">
+                                                <textarea id="textarea2" name="educationdescription"
+                                                    class="materialize-textarea"><%=foundresume.education.description[i]%></textarea>
+                                                <label for="textarea2">Textarea</label>
+                                            </div>
+                                            <div class="input-field">
+                                                <input id="educationlink" type="url" name="educationurl"
+                                                    class="validate" value="<%=foundresume.education.url[i]%>">
+                                                <label for="educationlink">Link (Optional): https://www...</label>
+                                            </div>
+                                            <div class="input-field">
+                                                <input id="educationstartdate" type="text" name="educationstartdate"
+                                                    class="datepicker" value="<%=foundresume.education.startdate[i]%>">
+                                                <label for="educationstartdate">Start Date:</label>
+                                            </div>
+                                            <div class="input-field">
+                                                <input id="educationenddate" type="text" name="educationenddate"
+                                                    class="datepicker" value="<%=foundresume.education.enddate[i]%>">
+                                                <label for="educationenddate">End Date:</label>
+                                            </div>
+                                            <a onclick="deletion(<%=tempcount%>)"
+                                                class="waves-effect waves-light btn">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <%tempcount++%>
+                            <% } %>
+                            <% } %>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <a onclick="insertion(1)" class="waves-effect waves-light btn">Add</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">whatshot</i>Certification/Skills.
+                    </div>
+                    <div class="collapsible-body black">
+                        <div id="appendhere3">
+                            <% if(foundresume.certification.title != null){ %>
+                            <% for(var i=0;i<foundresume.certification.title.length;i++){ %>
+                            <div id="dummy<%=tempcount%>">
+                                <div class="row">
+                                    <div class="col s12">
+                                        <div class="card-panel animate slideInUp delay-<%=i%>s">
+                                            <div class="input-field">
+                                                <input id="certificationeducationtitle" type="text"
+                                                    name="certificationtitle"
+                                                    value="<%=foundresume.certification.title[i]%>" class="validate">
+                                                <label for="certificationeducationtitle">Certification Field/Course
+                                                    Name</label>
+                                            </div>
+                                            <div class="input-field">
+                                                <textarea id="textarea3" name="certificationdescription"
+                                                    class="materialize-textarea"></textarea>
+                                                <label
+                                                    for="textarea3"><%=foundresume.certification.description[i]%></label>
+                                            </div>
+                                            <div class="input-field">
+                                                <input id="certificationlink" type="url" name="certificationurl"
+                                                    value="<%=foundresume.certification.url[i]%>" class="validate">
+                                                <label for="certificationlink">Link to Certificate (Optional):
+                                                    https://www...</label>
+                                            </div>
+                                            <div class="input-field">
+                                                <input id="certificationstartdate" type="text"
+                                                    name="certificationstartdate"
+                                                    value="<%=foundresume.certification.startdate[i]%>"
+                                                    class="datepicker">
+                                                <label for="certificationstartdate">Start Date:</label>
+                                            </div>
+                                            <div class="input-field">
+                                                <input id="certificationenddate" type="text" name="certificationenddate"
+                                                    value="<%=foundresume.certification.enddate[i]%>"
+                                                    class="datepicker">
+                                                <label for="certificationenddate">End Date:</label>
+                                            </div>
+                                            <a onclick="deletion(<%=tempcount%>)"
+                                                class="waves-effect waves-light btn">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <%tempcount++%>
+                            <% } %>
+                            <% } %>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <a onclick="insertion(2)" class="waves-effect waves-light btn">Add</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">whatshot</i>Other Interests/Skills.
+                    </div>
+                    <div class="collapsible-body black">
+                        <div id="appendhere4">
+                            <% if(foundresume.certification.title != null){ %>
+                            <% for(var i=0;i<foundresume.certification.title.length;i++){ %>
+                            <div id="dummy<%=tempcount%>">
+                                <div class="row">
+                                    <div class="col s12">
+                                        <div class="card-panel animate slideInUp delay-<%=i%>s">
+                                            <div class="input-field">
+                                                <input id="skilltitle" type="text" name="skilltitle" class="validate">
+                                                <label for="skilltitle">Skill</label>
+                                            </div>
+                                            <a onclick="deletion(<%=tempcount%>)"
+                                                class="waves-effect waves-light btn">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <%tempcount++%>
+                            <% } %>
+                            <% } %>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <a onclick="insertion(3)" class="waves-effect waves-light btn">Add</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="card-panel teal">
+                <span>
+                    <label>
+                        <input type="checkbox" required>
+                        <span>Have you checked every entry?, Don't worry it can always be updated later on.</span>
+                    </label>
+                </span>
+                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<%- include ("./partials/customdiv/customdiv1") %>
+<%- include ("./partials/customdiv/customdiv2") %>
+<%- include ("./partials/customdiv/customdiv3") %>
+<%- include ("./partials/customdiv/customdiv4") %>
+
+<script src="/scripts/edit.js"></script>
+
+<%- include ("./partials/footer") %>

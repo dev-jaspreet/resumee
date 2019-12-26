@@ -1,0 +1,108 @@
+<%- include ("./partials/header") %>
+
+<div class="row">
+    <div class="col s3">
+        <%- include ("./partials/sidenav") %>
+    </div>
+    <div class="col s12 m9">
+        <form action="/create" method="POST">
+        <div class="card-panel customcard">
+            <span class="white-text">
+                <h5>What do you want to call your Resume?</h5>
+            </span>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="resumename" type="text" class="validate white-text">
+                    <label for="resumename">Enter Here !!!</label>
+                </div>
+            </div>
+        </div>
+            <ul class="collapsible">
+                <li class="active">
+                    <div class="collapsible-header"><i class="material-icons">filter_drama</i>Project/Experience.
+                    </div>
+                    <div class="collapsible-body mybody">
+                        <div id="appendhere1"></div>
+                        <div class="row">
+                            <div class="col s12">
+                                <a onclick="insertion(0)" class="waves-effect waves-light btn">Add</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">place</i>Education.</div>
+                    <div class="collapsible-body black">
+                        <div id="appendhere2"></div>
+                        <div class="row">
+                            <div class="col s12">
+                                <a onclick="insertion(1)" class="waves-effect waves-light btn">Add</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">whatshot</i>Certification/Skills.
+                    </div>
+                    <div class="collapsible-body black">
+                        <div id="appendhere3"></div>
+                        <div class="row">
+                            <div class="col s12">
+                                <a onclick="insertion(2)" class="waves-effect waves-light btn">Add</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">whatshot</i>Other Interests/Skills.
+                    </div>
+                    <div class="collapsible-body black">
+                        <div id="appendhere4"></div>
+                        <div class="row">
+                            <div class="col s12">
+                                <a onclick="insertion(3)" class="waves-effect waves-light btn">Add</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="row">
+                <div class="col s12">
+                  <div class="card-panel customcard">
+                    <p>
+                      <label>
+                        <input name="availability" type="radio" checked />
+                        <span>PUBLIC</span>
+                      </label>
+                    </p>
+                    <p>
+                      <label>
+                        <input name="availability" type="radio" />
+                        <span>PRIVATE</span>
+                      </label>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            <div class="card-panel customcard">
+                <span>
+                    <label>
+                        <input type="checkbox" required>
+                        <span class="white-text">Have you checked every entry?, Don't worry it can always be updated later on.</span>
+                    </label>
+                </span>
+                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<%- include ("./partials/customdiv/customdiv1") %>
+<%- include ("./partials/customdiv/customdiv2") %>
+<%- include ("./partials/customdiv/customdiv3") %>
+<%- include ("./partials/customdiv/customdiv4") %>
+
+<script src="/scripts/edit.js"></script>
+
+<%- include ("./partials/footer") %>
