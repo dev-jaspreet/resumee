@@ -3,17 +3,17 @@
     <div class="row">
         <div class="col s4"></div>
         <div class="col s12 l4 center">
-            <div class="card-panel teal">
+            <div class="card-panel teal" style="border-radius: 5px">
                 <h3>Resumee</h3>
                 <p></p>
                 <div class="row">
-                <a class="col s12 waves-effect waves-light btn btn-large modal-trigger" href="#modal1">Login</a>
+                <a class="col s12 waves-effect waves-light btn btn-large modal-trigger cb" href="#modal1">Login</a>
                 </div>
                 <div class="row">
-                <a class="col s12 waves-effect waves-light btn btn-large modal-trigger" href="#modal2">SignUp</a>
+                <a class="col s12 waves-effect waves-light btn btn-large modal-trigger cb" href="#modal2">SignUp</a>
                 </div>
                 <div class="row">
-                <a class="col s12 waves-effect waves-light btn btn-large modal-trigger" href="#modal2">Install</a>
+                <a class="col s12 waves-effect waves-light btn btn-large modal-trigger cb" href="#modal3">Install</a>
                 </div>
       </div>
               <div class="col s4"></div>
@@ -21,6 +21,14 @@
         </div>
     </div>
 </div>
+<div id="modal3" class="modal">
+    <div class="modal-content">
+      <h4>Progressive Web App Installation</h4>
+      <p>Proceed to install PWA on your device.</p>
+      <a onclick="install()" class="modal-close waves-effect waves-light btn">INSTALL PWA</a>
+    </div>
+  </div>
+<script src="/scripts/pwainstall.js"></script>
 <script src="/pwabuilder-sw-register.js"></script>
 <%- include ("./partials/login-register") %>
 <%- include ("./partials/footer") %>
