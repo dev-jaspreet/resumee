@@ -3,7 +3,7 @@
     "lang": "English",
     "name": "My Resume",
     "scope": "/",
-    "display": "browser",
+    "display": "standalone",
     "start_url": "https://resumeontheweb-app-619.herokuapp.com/",
     "short_name": "My Resume",
     "theme_color": "transparent",
