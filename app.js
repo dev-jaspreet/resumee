@@ -3,6 +3,7 @@ var express = require("express"),
     passport = require("passport"),
     bodyParser = require("body-parser"),
     flash = require("connect-flash"),
+    enforce = require('express-sslify'),
     mongoose = require("mongoose"),
     expressanitizer = require("express-sanitizer"),
     LocalStrategy = require('passport-local').Strategy,
@@ -14,6 +15,7 @@ var express = require("express"),
 mongoose.connect("mongodb+srv://jaspreet:singh@cluster0-aw4yr.mongodb.net/resumeOnTheWeb?retryWrites=true&w=majority", { useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false, useCreateIndex: true, autoIndex: true });
 
 app.set("view engine", "ejs");
+app.use(enforce.HTTPS({ trustProtoHeader: true }))
 app.use(express.static("public"));
 app.use(flash());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -330,3 +332,16 @@ app.get('/logout', function(req, res) {
 app.listen(process.env.PORT, process.env.IP, function() {
     console.log("build runnig!!!")
 })
+
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
+app.use(function(req, res, next) {
+    if (req.protocol === "http") {
+        return res.redirect("https://resumeontheweb-app-619.herokuapp.com/" + req.originalUrl);
+    }
+    next();
+});
