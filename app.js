@@ -65,7 +65,6 @@ app.get("/viewResume/:id", function(req, res) {
             console.log(err)
         }
         else {
-            console.log(foundresume)
             res.render("viewResume", { pageTitle: foundresume.user.fullname + "'s Resume", foundresume: foundresume, trigger: true })
         }
     })
@@ -80,7 +79,6 @@ app.get("/editresume/:id", function(req, res) {
             console.log(err)
         }
         else {
-            console.log(foundresume)
             res.render("edit", { pageTitle: "Edit Your Resume", foundresume: foundresume })
         }
     })
@@ -165,7 +163,6 @@ app.post("/create", isLoggedIn, function(req, res) {
             created.skill = skill
             created.user = req.user._id
             created.save()
-            // console.log(created)
             res.redirect("/index")
         }
     })
@@ -240,9 +237,7 @@ app.put("/updateResume/:id", function(req, res) {
             savedresume.education = education
             savedresume.certification = certification
             savedresume.skill = skill
-            // savedresume.user = req.user._id
             savedresume.save()
-            console.log(savedresume)
             res.redirect("/viewResume/" + req.params.id)
         }
     })
@@ -294,7 +289,6 @@ app.get("/user/:id", function(req, res) {
             console.log(err)
         }
         else {
-            console.log(founduser)
             res.render("user", { pageTitle: founduser.fullname + "'s Account Setting.", founduser: founduser })
         }
     })

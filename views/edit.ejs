@@ -6,7 +6,7 @@
     </div>
     <div class="col s12 m9">
         <form action="/updateResume/<%=foundresume._id%>?_method=PUT" method="POST">
-        <div class="card-panel teal">
+        <div class="card-panel bs">
             <span class="white-text">
                 <h5>Do you want to change the way you call your Resume?</h5>
             </span>
@@ -19,16 +19,16 @@
         </div>
             <ul class="collapsible">
                 <li class="active">
-                    <div class="collapsible-header"><i class="material-icons">filter_drama</i>Project/Experience.
+                    <div class="collapsible-header bs white-text"><i class="material-icons">filter_drama</i>Project/Experience.
                     </div>
-                    <div class="collapsible-body black">
+                    <div class="collapsible-body gs">
                         <div id="appendhere1">
                             <% if(foundresume.project.title != null){ %>
                             <% for(var i=0;i<foundresume.project.title.length;i++){ %>
                             <div id="dummy<%=tempcount%>">
                                 <div class="row">
                                     <div class="col s12">
-                                        <div class="card-panel animate slideInUp delay-<%=i%>s">
+                                        <div class="card-panel ws animate slideInUp delay-<%=i%>s">
                                             <div class="input-field">
                                                 <input id="projecttitle" type="text" name="projecttitle"
                                                     class="validate" value="<%=foundresume.project.title[i]%>">
@@ -73,8 +73,8 @@
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">place</i>Education.</div>
-                    <div class="collapsible-body black">
+                    <div class="collapsible-header gs white-text"><i class="material-icons">place</i>Education.</div>
+                    <div class="collapsible-body gs">
                         <div id="appendhere2">
                             <% if(foundresume.education.title != null){ %>
                             <% for(var i=0;i<foundresume.education.title.length;i++){ %>
@@ -125,9 +125,9 @@
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">whatshot</i>Certification/Skills.
+                    <div class="collapsible-header bbs"><i class="material-icons">whatshot</i>Certification/Skills.
                     </div>
-                    <div class="collapsible-body black">
+                    <div class="collapsible-body gs">
                         <div id="appendhere3">
                             <% if(foundresume.certification.title != null){ %>
                             <% for(var i=0;i<foundresume.certification.title.length;i++){ %>
@@ -185,9 +185,9 @@
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">whatshot</i>Other Interests/Skills.
+                    <div class="collapsible-header ws"><i class="material-icons">whatshot</i>Other Interests/Skills.
                     </div>
-                    <div class="collapsible-body black">
+                    <div class="collapsible-body gs">
                         <div id="appendhere4">
                             <% if(foundresume.certification.title != null){ %>
                             <% for(var i=0;i<foundresume.certification.title.length;i++){ %>

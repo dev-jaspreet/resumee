@@ -8,21 +8,21 @@
         <div class="row">
             <% for(var i = 0;i < foundresume.length;i++){%>
             <div class="col s12 m4">
-                <div class="card sticky-action">
+                <div class="card sticky-action gs">
                     <div class="card-image waves-effect waves-block waves-light">
                         <img class="activator" src="https://materializecss.com/images/sample-1.jpg">
                     </div>
                     <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4"><%=foundresume[i].resumename%><i
+                        <span class="card-title activator white-text text-darken-4"><%=foundresume[i].resumename%><i
                                 class="material-icons right">more_vert</i></span>
                     </div>
-                    <div class="card-reveal">
+                    <div class="card-reveal ws">
                         <span class="card-title grey-text text-darken-4">Card Title<i
                                 class="material-icons right">close</i></span>
                         <p>Here is some more information about this product that is only revealed once clicked on.</p>
                     </div>
-                    <div class="card-action">
-                        <a href="/viewResume/<%=foundresume[i].id%>">View Resume</a>
+                    <div class="card-action" style="">
+                        <a class="tbbs" href="/viewResume/<%=foundresume[i].id%>">View Resume</a>
                     </div>
                 </div>
             </div>

@@ -15,28 +15,24 @@
 }
 
 .navcustom {
-    background-color: #0F0F0F
+    background-color: #00adb5
 }
 
 body {
-    background-color: #2D2E2E
+    background-color: #eeeeee
 }
 
 .sidenav {
-    background-color: #716969
+    background-color: #00adb5
 }
 
 .sidenavlist {
-    background-color: #716969
+    background-color: #00adb5
 }
 
 .customcard {
     /*background-color: #2A1E5C*/
-    background-image: linear-gradient(to bottom right, #716969, #BCABAE);
-}
-
-.collapsible-header {
-    background-color: #BCABAE
+    background-image: linear-gradient(to bottom right, #222831, #393e46);
 }
 
 .mybody {
@@ -52,4 +48,20 @@ body {
 
 .cb {
     border-radius: 20px
+}
+
+.gs {
+    background-color: #393e46
+}
+
+.bs {
+    background-color: #222831
+}
+
+.ws {
+    background-color: #eeeeee
+}
+
+.bbs {
+    background-color: #00adb5
 }
