@@ -10,8 +10,8 @@
     "description": "Web portal designed to host resume/cv.",
     "orientation": "portrait",
     "background_color": "#eeeeee",
-    "related_applications": "",
-    "prefer_related_applications": "false",
+    "related_applications": [],
+    "prefer_related_applications": false,
     "icons": [
         {
             "src": "/images/44.png",
