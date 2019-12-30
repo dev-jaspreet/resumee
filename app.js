@@ -38,6 +38,7 @@ app.use(function(req, res, next) {
     res.locals.trigger = false;
     next();
 })
+app.enable('trust proxy')
 
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
