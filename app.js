@@ -3,6 +3,7 @@ var express = require("express"),
     passport = require("passport"),
     bodyParser = require("body-parser"),
     flash = require("connect-flash"),
+    compression = require("compression"),
     enforce = require('express-sslify'),
     mongoose = require("mongoose"),
     expressanitizer = require("express-sanitizer"),
@@ -15,6 +16,7 @@ var express = require("express"),
 mongoose.connect("mongodb+srv://jaspreet:singh@cluster0-aw4yr.mongodb.net/resumeOnTheWeb?retryWrites=true&w=majority", { useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false, useCreateIndex: true, autoIndex: true });
 
 app.set("view engine", "ejs");
+app.use(compression())
 app.use(enforce.HTTPS({ trustProtoHeader: true }))
 app.use(express.static("public"));
 app.use(flash());
@@ -38,7 +40,6 @@ app.use(function(req, res, next) {
     res.locals.trigger = false;
     next();
 })
-app.enable('trust proxy')
 
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
