@@ -14,29 +14,9 @@
     display: none;
 }
 
-.navcustom {
-    background-color: #00adb5
-}
-
-body {
-    background-color: #eeeeee
-}
-
-.sidenav {
-    background-color: #00adb5
-}
-
-.sidenavlist {
-    background-color: #00adb5
-}
-
 .customcard {
     /*background-color: #2A1E5C*/
     background-image: linear-gradient(to bottom right, #222831, #393e46);
-}
-
-.mybody {
-    background-color: #FBFBFB
 }
 
 .cover {
