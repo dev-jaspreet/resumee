@@ -61,31 +61,33 @@
             <div class="row">
                 <div class="input-field col s12 m6">
                     <i class="material-icons prefix">email</i>
-                    <input id="icon_prefix" type="email" class="validate" name="email">
+                    <input id="icon_prefix" type="email" class="validate" name="email" value="<%=founduser.contact.email%>">
                     <label for="icon_prefix">Email:</label>
                 </div>
                 <div class="input-field col s12 m6">
                     <i class="material-icons prefix">smartphone</i>
-                    <input id="icon_telephone" type="text" class="validate" name="mobile">
+                    <input id="icon_telephone" type="text" class="validate" name="mobile" value="<%=founduser.contact.mobile%>">
                     <label for="icon_telephone">Mobile:</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12 m6">
                     <i class="material-icons prefix">account_circle</i>
-                    <input id="icon_prefix" type="text" class="validate" name="linkedin">
+                    <input id="icon_prefix" type="text" class="validate" name="linkedin" value="<%=founduser.contact.linkedin%>">
                     <label for="icon_prefix">LinkedIn:</label>
                 </div>
                 <div class="input-field col s12 m6">
                     <i class="material-icons prefix">face</i>
-                    <input id="icon_telephone" type="text" class="validate" name="facebook">
+                    <input id="icon_telephone" type="text" class="validate" name="facebook" value="<%=founduser.contact.facebook%>">
                     <label for="icon_telephone">Facebook:</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix">home</i>
-                    <textarea id="textarea1" class="materialize-textarea" name="address"></textarea>
+                    <textarea id="textarea1" class="materialize-textarea" name="address">
+                        <%=founduser.contact.address%>
+                    </textarea>
                     <label for="textarea1">Contact Details:</label>
                 </div>
             </div>
