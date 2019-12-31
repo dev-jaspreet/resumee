@@ -1,0 +1,94 @@
+{
+    "dir": "ltr",
+    "lang": "English",
+    "name": "Resumee",
+    "scope": "/",
+    "display": "standalone",
+    "start_url": "https://resumeontheweb-app-619.herokuapp.com/",
+    "short_name": "My Resume",
+    "theme_color": "#00adb5",
+    "description": "Web portal designed to host resume/cv.",
+    "orientation": "portrait",
+    "background_color": "#eeeeee",
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "/images/44.png",
+            "sizes": "44x44"
+		},
+        {
+            "src": "/images/48.png",
+            "sizes": "48x48"
+		},
+        {
+            "src": "/images/1240600.png",
+            "sizes": "1240x600"
+		},
+        {
+            "src": "/images/300.png",
+            "sizes": "300x300"
+		},
+        {
+            "src": "/images/150.png",
+            "sizes": "150x150"
+		},
+        {
+            "src": "/images/99.png",
+            "sizes": "88x88"
+		},
+        {
+            "src": "/images/24.png",
+            "sizes": "24x24"
+		},
+        {
+            "src": "/images/50.png",
+            "sizes": "50x50"
+		},
+        {
+            "src": "/images/620300.png",
+            "sizes": "620x300"
+		},
+        {
+            "src": "/images/192.png",
+            "sizes": "192x192"
+		},
+        {
+            "src": "/images/144.png",
+            "sizes": "144x144"
+		},
+        {
+            "src": "/images/96.png",
+            "sizes": "96x96"
+		},
+        {
+            "src": "/images/72.png",
+            "sizes": "72x72"
+		},
+        {
+            "src": "/images/36.png",
+            "sizes": "36x36"
+		},
+        {
+            "src": "/images/1024.png",
+            "sizes": "1024x1024"
+		},
+        {
+            "src": "/images/180.png",
+            "sizes": "180x180"
+		},
+        {
+            "src": "/images/152.png",
+            "sizes": "152x152"
+		},
+        {
+            "src": "/images/120.png",
+            "sizes": "120x120"
+		},
+        {
+            "src": "/images/76.png",
+            "sizes": "76x76"
+		}],
+    "screenshots": [],
+    "generated": "undefined"
+}

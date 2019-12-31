@@ -1,0 +1,63 @@
+<div id="modal1" class="modal bs animated fadeIn" style="border-radius:10px">
+    <div class="modal-content">
+        <h4 class="white-text">Login</h4>
+        <form action="/login" method="POST">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="email" type="email" name="username" class="validate" required>
+                    <label for="email">Email (Gmail, Outlook,...):</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="password" type="password" name="password" class="validate" required>
+                    <label for="password">Password:</label>
+                </div>
+            </div>
+            <button class="btn waves-effect waves-light right" type="submit" name="action">Login
+                <i class="material-icons right">send</i>
+            </button>
+            <a class="waves-effect waves-light btn modal-trigger" href="#modal2">SignUp</a>
+        </form>
+    </div>
+</div>
+
+<div id="modal2" class="modal gs animated fadeIn" style="border-radius:10px">
+    <div class="modal-content">
+        <h4 class="white-text">Lets get you started</h4>
+        <form action="/register" method="POST">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="fullname" type="text" name="fullname" class="validate" required>
+                    <label for="fullname">Full Name:</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="dob" type="text" name="dob" class="datepicker validate" required>
+                    <label for="dob">Birth Date:</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="email" type="email" name="email" class="validate" required>
+                    <label for="email">Email (Gmail, Outlook,...):</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="password" type="password" name="password" class="validate" required>
+                    <label for="password">Password:</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="password1" type="password" name="passwordConfirm" class="validate" required>
+                    <label for="password1">Confirm Password:</label>
+                </div>
+            </div>
+                    <p class="white-text">/* Contact Details can be added later in Account settings. */</p>
+
+            <button class="btn waves-effect waves-light right" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+            </button>
+            <a class="waves-effect waves-light btn modal-close" href="#!">Dismiss</a>
+        </form>
+    </div>
+</div>

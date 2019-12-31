@@ -1,0 +1,42 @@
+<ul id="slide-out" class="sidenav sidenav-fixed bbs">
+    <li>
+        <div class="user-view">
+            <div class="background">
+                <img src="https://materializecss.com/images/sample-1.jpg">
+            </div>
+            <a href="#user"><img class="circle" src="https://materializecss.com/images/sample-1.jpg"></a>
+            <% if(!currentuser){ %>
+            <a href="#name"><span class="white-text name">Guest</span></a>
+            <% }else{ %>
+            <a href="#name"><span class="white-text name"><%=currentuser.fullname%></span></a>
+            <a href="#email"><span class="white-text email"><%=currentuser.email%></span></a>
+            <% } %>
+        </div>
+    </li>
+    <ul class="collapsible collapsible-accordion">
+        <li>
+            <a class="collapsible-header" style="padding-left:32px">User Options<i class="material-icons">person</i></a>
+            <div class="collapsible-body">
+                <ul class="sidenavlist bbs">
+                    <% if(!currentuser){ %>
+                    <li><a class="waves-effect waves-light modal-trigger" href="#modal1">Login</a></li>
+                    <li><a class="waves-effect waves-light modal-trigger" href="#modal2">SignUp</a></li>
+                    <% }else{ %>
+                    <li><a href="/user/<%=currentuser.id%>">Account</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                    <% } %>
+                </ul>
+            </div>
+        </li>
+    </ul>
+    <li><a href="/create"><i class="material-icons">create</i>Create Resume</a></li>
+    <% if(trigger){ %>
+    <li><a href="/editresume/<%=foundresume.id%>"><i class="material-icons">gavel</i>Edit Resume</a></li>
+    <% } %>
+    <li>
+        <div class="divider"></div>
+    </li>
+    <li><a class="subheader">Other</a></li>
+    <li><a class="waves-effect" href="#!">About</a></li>
+</ul>
+<%- include ("./login-register") %>

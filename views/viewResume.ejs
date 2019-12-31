@@ -1,0 +1,109 @@
+<%- include ("./partials/header") %>
+
+<div class="row">
+    <div class="col s3">
+        <%- include ("./partials/sidenav") %>
+    </div>
+    <div class="col s12 m9">
+        <div class="row">
+            <div class="col s12">
+              <% if(foundresume.project.title != null){ %>
+                <div class="card customcard">
+                    <div class="card-content white-text">
+                        <span class="card-title">Project(s)</span>
+                        <hr>
+                        <% for(var i=0;i<foundresume.project.title.length;i++){ %>
+                        <div class="row">
+                            <div class="col s1">
+                                <h5>#<%=(i+1)%></h5>
+                                
+                            </div>
+                            <div class="col s11">
+                                <h5><%=foundresume.project.title[i]%></h5>
+                                <p><%=foundresume.project.description[i]%></p>
+                                <p>Related Links: <a target="_blank" href="<%=foundresume.project.url[i]%>"><%=foundresume.project.title[i]%></a></p>
+                                <p>From: <em><%=foundresume.project.startdate[i]%></em> To: <em><%=foundresume.project.enddate[i]%></em></p>
+                            </div>
+                        </div>
+                        <hr>
+                        <% } %>
+                    </div>
+                </div>
+                <% } %>
+                <% if(foundresume.education.title !=null){ %>
+                <div class="card customcard">
+                    <div class="card-content white-text">
+                        <span class="card-title">Education</span>
+                        <hr>
+                        <% for(var i=0;i<foundresume.education.title.length;i++){ %>
+                        <div class="row">
+                            <div class="col s1">
+                                <h5>#<%=(i+1)%></h5>
+                                
+                            </div>
+                            <div class="col s11">
+                                <h5><%=foundresume.education.title[i]%></h5>
+                                <p><%=foundresume.education.description[i]%></p>
+                                <p>Related Links: <a target="_blank" href="<%=foundresume.education.url[i]%>"><%=foundresume.education.title[i]%></a></p>
+                                <p>From: <em><%=foundresume.education.startdate[i]%></em> To: 
+                                <% if(foundresume.education.enddate[i] != null && foundresume.education.enddate[i] != ""){ %>
+                                <em><%=foundresume.education.enddate[i]%></em>
+                                <% }else{ %>
+                                <em>Present</em>
+                                <% } %>
+                                </p>
+                            </div>
+                        </div>
+                        <hr>
+                        <% } %>
+                    </div>
+                </div>
+                <% } %>
+                <% if(foundresume.certification.title !=null){ %>
+                <div class="card customcard">
+                    <div class="card-content white-text">
+                        <span class="card-title">Certification(s)</span>
+                        <hr>
+                        <% for(var i=0;i<foundresume.certification.title.length;i++){ %>
+                        <div class="row">
+                            <div class="col s1">
+                                <h5>#<%=(i+1)%></h5>
+                                
+                            </div>
+                            <div class="col s11">
+                                <h5><%=foundresume.certification.title[i]%></h5>
+                                <p><%=foundresume.certification.description[i]%></p>
+                                <p>Related Links: <a target="_blank" href="<%=foundresume.certification.url[i]%>"><%=foundresume.certification.title[i]%></a></p>
+                                <p>From: <em><%=foundresume.certification.startdate[i]%></em> To: <em><%=foundresume.certification.enddate[i]%></em></p>
+                            </div>
+                        </div>
+                        <hr>
+                        <% } %>
+                    </div>
+                </div>
+                <% } %>
+                <% if(foundresume.skill.title != null){ %>
+                <div class="card customcard">
+                    <div class="card-content white-text">
+                        <span class="card-title">Skill(s)</span>
+                        <hr>
+                        <% for(var i=0;i<foundresume.skill.title.length;i++){ %>
+                        <div class="row">
+                            <div class="col s1">
+                                <h5>#<%=(i+1)%></h5>
+                                
+                            </div>
+                            <div class="col s11">
+                                <h5><%=foundresume.skill.title[i]%></h5>
+                            </div>
+                        </div>
+                        <hr>
+                        <% } %>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include ("./partials/footer") %>

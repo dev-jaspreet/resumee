@@ -1,0 +1,25 @@
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+    M.AutoInit();
+    var currYear = (new Date()).getFullYear();
+    $(document).ready(function() {
+      $(".datepicker").datepicker({
+        defaultDate: new Date(currYear,1,31),
+        maxDate: new Date(currYear,12,31),
+        yearRange: [1950, currYear],
+        format: "yyyy/mm/dd"    
+      });
+    });
+    var toast = "<%=toast%>";
+    if (toast && toast.length > 0) {
+        M.toast({
+            html: "<%=toast%>",
+            classes: 'customtoast'
+        })
+    }
+</script>
+</body>
+
+</html>
