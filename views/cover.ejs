@@ -7,27 +7,39 @@
                 <h3 class="white-text">Resumee</h3>
                 <p></p>
                 <div class="row">
-                <a class="col s12 waves-effect waves-light btn btn-large modal-trigger bbs" style="border-radius: 20px" href="#modal1">Login</a>
+                    <div class="col s6">
+                        <button class="col s12 waves-effect waves-light btn btn-large modal-trigger bbs"
+                        style="border-radius: 20px" href="#modal1">Login</button>
+                    </div>
+                    <div class="col s6">
+                        <button class="col s12 waves-effect waves-light btn btn-large modal-trigger bbs"
+                        style="border-radius: 20px" href="#modal2">SignUp</button>
+                    </div>
                 </div>
                 <div class="row">
-                <a class="col s12 waves-effect waves-light btn btn-large modal-trigger bbs" style="border-radius: 20px" href="#modal2">SignUp</a>
+                    <div class="col s6">
+                        <a class="col s12 waves-effect waves-light btn btn-large modal-trigger bbs"
+                        style="border-radius: 20px" href="#modal3">Install</a>
+                    </div>
+                    <div class="col s6">
+                        <a class="col s12 waves-effect waves-light btn btn-large bbs"
+                        style="border-radius: 20px" href="/index">Continue</a>
+                    </div>
+                    
+                    
                 </div>
-                <div class="row">
-                <a class="col s12 waves-effect waves-light btn btn-large modal-trigger bbs" style="border-radius: 20px" href="#modal3">Install</a>
-                </div>
-      </div>
-              <div class="col s4"></div>
-
+            </div>
+            <div class="col s4"></div>
         </div>
     </div>
 </div>
-<div id="modal3" class="modal" style="border-radius:10px">
-    <div class="modal-content bbs">
-      <h4>Progressive Web App Installation</h4>
-      <p>Proceed to install PWA on your device.</p>
-      <a onclick="install()" class="modal-close waves-effect waves-light btn">INSTALL PWA</a>
+<div id="modal3" class="modal bbs animated fadeIn" style="border-radius:10px">
+    <div class="modal-content">
+        <h4>Progressive Web App Installation</h4>
+        <p>Proceed to install PWA on your device.</p>
+        <a onclick="install()" class="modal-close waves-effect waves-light btn">INSTALL PWA</a>
     </div>
-  </div>
+</div>
 <script src="/scripts/pwainstall.js"></script>
 <script src="/pwabuilder-sw-register.js"></script>
 <%- include ("./partials/login-register") %>
