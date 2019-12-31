@@ -252,7 +252,6 @@ app.post("/register", function(req, res) {
                 username: req.body.email,
                 fullname: req.body.fullname,
                 DateOfBirth: req.body.dob,
-                email: req.body.email
             }),
             req.body.password,
             function(err, newUser) {
@@ -261,6 +260,10 @@ app.post("/register", function(req, res) {
                     res.redirect("/");
                 }
                 else {
+                    var contact = {};
+                    contact.email = req.body.email
+                    newUser.contact = contact;
+                    newUser.save()
                     req.flash("toast", "Registration Complete.");
                     res.redirect("/")
                 }
@@ -275,7 +278,6 @@ app.post("/updateContact/:id", function(req, res) {
         }
         else {
             var contact = {};
-
             contact.email = req.body.email
             contact.mobile = req.body.mobile
             contact.linkedin = req.body.linkedin
@@ -293,6 +295,8 @@ app.get("/user/:id", function(req, res) {
             console.log(err)
         }
         else {
+            console.log(founduser)
+            req.flash("toast","Hi there!")
             res.render("user", { pageTitle: founduser.fullname + "'s Account Setting.", founduser: founduser })
         }
     })
@@ -326,7 +330,7 @@ app.post('/login',
 // LOGOUT
 app.get('/logout', function(req, res) {
     req.logout();
-    // req.flash("toast", "Logged You Out.")
+    req.flash("toast", "Logged You Out.")
     res.redirect('/');
 });
 

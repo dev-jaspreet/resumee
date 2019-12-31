@@ -1,7 +1,7 @@
-<div id="modal1" class="modal" style="border-radius:10px">
-    <div class="modal-content bs white-text">
-        <h4>Login</h4>
-        <form class="col s12" action="/login" method="POST">
+<div id="modal1" class="modal bs" style="border-radius:10px">
+    <div class="modal-content">
+        <h4 class="white-text">Login</h4>
+        <form action="/login" method="POST">
             <div class="row">
                 <div class="input-field col s12">
                     <input id="email" type="email" name="username" class="validate" required>
@@ -18,15 +18,14 @@
                 <i class="material-icons right">send</i>
             </button>
             <a class="waves-effect waves-light btn modal-trigger" href="#modal2">SignUp</a>
-
         </form>
     </div>
 </div>
 
-<div id="modal2" class="modal" style="border-radius:10px">
-    <div class="modal-content gs white-text">
-        <h4>Lets get you started</h4>
-        <form class="col s12" action="/register" method="POST">
+<div id="modal2" class="modal gs" style="border-radius:10px">
+    <div class="modal-content">
+        <h4 class="white-text">Lets get you started</h4>
+        <form action="/register" method="POST">
             <div class="row">
                 <div class="input-field col s6">
                     <input id="fullname" type="text" name="fullname" class="validate" required>
@@ -53,7 +52,7 @@
                     <label for="password1">Confirm Password:</label>
                 </div>
             </div>
-                    <p>/* Contact Details can be added later in Account settings. */</p>
+                    <p class="white-text">/* Contact Details can be added later in Account settings. */</p>
 
             <button class="btn waves-effect waves-light right" type="submit" name="action">Submit
                 <i class="material-icons right">send</i>

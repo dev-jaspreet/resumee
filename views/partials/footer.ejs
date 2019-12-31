@@ -12,6 +12,13 @@
         format: "yyyy/mm/dd"    
       });
     });
+    var toast = "<%=toast%>";
+    if (toast && toast.length > 0) {
+        M.toast({
+            html: "<%=toast%>",
+            classes: 'customtoast'
+        })
+    }
 </script>
 </body>
 
