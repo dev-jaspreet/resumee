@@ -8,7 +8,7 @@ var resumeSchema = mongoose.Schema({
     education: Object,
     certification: Object,
     skill: Object,
-    user: {
+    owner: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
     },
