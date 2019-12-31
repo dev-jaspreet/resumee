@@ -271,6 +271,7 @@ app.post("/register", function(req, res) {
         )
     }
 })
+
 app.post("/updateContact/:id", function(req, res) {
     User.findById(req.params.id, function(err, founduser) {
         if (err) {
