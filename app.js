@@ -1,3 +1,4 @@
+// THIS IS MY APP
 var express = require("express"),
     app = express(),
     passport = require("passport"),
